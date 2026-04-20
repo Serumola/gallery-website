@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Art Gallery</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --background-color: #f9f9f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Georgia', serif;
+            font-weight: normal;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Layout */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        nav {
+            background-color: var(--dark-color);
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .artwork {
+            flex: 1 1 calc(20% - 1.5rem);
+            min-width: 200px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .artwork:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .artwork img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .artwork-info {
+            padding: 1rem;
+        }
+
+        .artwork-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .artwork-info p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .artwork {
+                flex: 1 1 calc(25% - 1.5rem);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .artwork {
+                flex: 1 1 calc(33.333% - 1.5rem);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .artwork {
+                flex: 1 1 100%;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Modern Art Gallery</h1>
+            <p>Exploring contemporary artistic expressions</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Exhibitions</a></li>
+            <li><a href="#">Artists</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section>
+            <h2>Current Exhibition</h2>
+            <p>Discover our curated collection of contemporary artworks from emerging and established artists worldwide.</p>
+            
+            <div class="gallery">
+                <!-- Artwork 1 -->
+                <div class="artwork">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5" alt="Colorful abstract painting">
+                    <div class="artwork-info">
+                        <h3>Colorful Abstractions</h3>
+                        <p>Artist: Maria Gonzalez</p>
+                        <p>2023, Acrylic on canvas</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 2 -->
+                <div class="artwork">
+                    <img src="https://images.unsplash.com/photo-1543857778-c4a1a3e0b2a8" alt="Mountain landscape painting">
+                    <div class="artwork-info">
+                        <h3>Mountain Horizon</h3>
+                        <p>Artist: James Peterson</p>
+                        <p>2022, Oil on canvas</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 3 -->
+                <div class="artwork">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" alt="Portrait painting">
+                    <div class="artwork-info">
+                        <h3>Form & Void</h3>
+                        <p>Artist: Chen Wei</p>
+                        <p>2021, Bronze</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 4 -->
+                <div class="artwork">
+                    <img src="https://images.unsplash.com/photo-1565200721287-b3a6c0b1a0c7" alt="Modern sculpture">
+                    <div class="artwork-info">
+                        <h3>Rhythmic Patterns</h3>
+                        <p>Artist: Sofia Martinez</p>
+                        <p>2023, Mixed media</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 5 -->
+                <div class="artwork">
+                    <img src="https://images.unsplash.com/photo-1531913764164-f85c52e6e654" alt="Watercolor painting">
+                    <div class="artwork-info">
+                        <h3>Silent Gaze</h3>
+                        <p>Artist: Thomas Wright</p>
+                        <p>2022, Watercolor</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 6 -->
+                <div class="artwork">
+                    <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55" alt="Digital artwork">
+                    <div class="artwork-info">
+                        <h3>Digital Dreams</h3>
+                        <p>Artist: Aisha Johnson</p>
+                        <p>2023, Digital print</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 7 -->
+                <div class="artwork">
+                    <img src="https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8" alt="Street art mural">
+                    <div class="artwork-info">
+                        <h3>Urban Voices</h3>
+                        <p>Artist: Carlos Mendez</p>
+                        <p>2021, Spray paint</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 8 -->
+                <div class="artwork">
+                    <img src="https://images.unsplash.com/photo-1559181567-c3190ca9959b" alt="Still life painting">
+                    <div class="artwork-info">
+                        <h3>Deconstructed</h3>
+                        <p>Artist: Elena Petrova</p>
+                        <p>2020, Mixed media</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 9 -->
+                <div class="artwork">
+                    <img src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458" alt="Impressionist painting">
+                    <div class="artwork-info">
+                        <h3>Light & Shadow</h3>
+                        <p>Artist: Pierre Leclerc</p>
+                        <p>2022, Oil on canvas</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 10 -->
+                <div class="artwork">
+                    <img src="https://images.unsplash.com/photo-1476231682828-37e571bc172f" alt="Surreal artwork">
+                    <div class="artwork-info">
+                        <h3>Dream Sequence</h3>
+                        <p>Artist: David Kim</p>
+                        <p>2023, Acrylic</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 11 -->
+                <div class="artwork">
+                   <img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7" alt="Minimalist art">
+                    <div class="artwork-info">
+                        <h3>Essence</h3>
+                        <p>Artist: Olivia Chen</p>
+                        <p>2021, Ink on paper</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 12 -->
+                <div class="artwork">
+                   <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401" alt="Expressionist painting">
+                    <div class="artwork-info">
+                        <h3>Emotional Landscape</h3>
+                        <p>Artist: Hans Bauer</p>
+                        <p>2020, Oil on canvas</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 13 -->
+                <div class="artwork">
+                    <img src="https://images.unsplash.com/photo-1584735422186-35a8a9b4ec78" alt="Pop art">
+                    <div class="artwork-info">
+                        <h3>Modern Times</h3>
+                        <p>Artist: Sarah Wilson</p>
+                        <p>2023, Mixed media</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 14 -->
+                <div class="artwork">
+                    <img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7" alt="Cubist painting">
+                    <div class="artwork-info">
+                        <h3>Cultural Icons</h3>
+                        <p>Artist: Andy Stone</p>
+                        <p>2022, Silkscreen</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 15 -->
+                <div class="artwork">
+                    <img src="https://images.unsplash.com/photo-1562547256-2c5ee93b60b7" alt="Textile art">
+                    <div class="artwork-info">
+                        <h3>Thought Experiment</h3>
+                        <p>Artist: Michael Zhang</p>
+                        <p>2021, Installation</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 16 -->
+                <div class="artwork">
+                   <img src="https://images.unsplash.com/photo-1584735422186-35a8a9b4ec78" alt="Ceramic art">
+                    <div class="artwork-info">
+                        <h3>Fragmented Reality</h3>
+                        <p>Artist: Pablo Sanchez</p>
+                        <p>2020, Oil on canvas</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 17 -->
+                <div class="artwork">
+                   <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Art photography">
+                    <div class="artwork-info">
+                        <h3>Motion Study</h3>
+                        <p>Artist: Giovanni Rossi</p>
+                        <p>2023, Digital</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 18 -->
+                <div class="artwork">
+                    <img src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458" alt="Mixed media artwork">
+                    <div class="artwork-info">
+                        <h3>Urban Geometry</h3>
+                        <p>Artist: Lisa Wong</p>
+                        <p>2022, Photograph</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 19 -->
+                <div class="artwork">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5" alt="Oil painting">
+                    <div class="artwork-info">
+                        <h3>Woven Stories</h3>
+                        <p>Artist: Amina Diallo</p>
+                        <p>2021, Textile</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 20 -->
+                <div class="artwork">
+                    <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968" alt="Pencil sketch">
+                    <div class="artwork-info">
+                        <h3>Earth & Fire</h3>
+                        <p>Artist: Yuki Tanaka</p>
+                        <p>2020, Ceramic</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Modern Art Gallery. All rights reserved.</p>
+            <p>Contact: info@modernartgallery.com | (555) 123-4567</p>
+        </div>
+    </footer>
+</body>
+</html>
